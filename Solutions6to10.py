@@ -20,3 +20,22 @@ SqoS = SqoS*SqoS
 print("SqoS = ",SqoS)
     
 print("Solution 6: ", SqoS-SoSq)
+
+
+# Problem 7. Find the 10,001st prime
+
+PrimeList = [2,3]
+x = 5
+PrimesChecked = 0
+while len(PrimeList) <= 10001:
+    for p in PrimeList:
+        if x%p != 0:
+            PrimesChecked += 1
+    if PrimesChecked == len(PrimeList):
+        PrimeList.append(x)
+    PrimesChecked = 0
+    x+=2
+
+print("Solution 7: ",PrimeList[10000])
+        
+            
