@@ -8,6 +8,15 @@ Created on Fri Dec 27 12:24:35 2019
 # Problem 11. Greatest product of 4 adj numbers.
 # Admittedly, this one is a bit tougher for me..
 # I'm certain there's a more proper way to approach this.
+# NOTE NOTE NOTE!!! This is a super naive approach. If I were to redo this
+# I would have one set of nested row and column indexing for-loops and would
+# have 4 separate loops within to get products for k. E.g.,
+# Row: [i,k+k]
+# Column [i+k,j]
+# Neg Diag: [i-k,j+k]
+# Pos Diag: [i+k,j+k]
+
+# My brain is tired :| Don't judge me!
 
 
 import numpy as np
