@@ -79,35 +79,53 @@ print("Solution to Problem 11: ",max(MatrixOfProducts))
 # Problem 12
 # The nth triangle number is the sum 1 + 2 + ... + n
 # Find the first triangle number with over 500 divisors
+# Commented out for efficiency since the code doesn't complete quickly enough.
 
-TriNumb = 0
-MaxDivisors = 2
-n = 1
-DivisorCount = 0
-import math
+# =============================================================================
+# TriNumb = 0
+# MaxDivisors = 2
+# n = 1
+# DivisorCount = 0
+# import math
+# 
+# while MaxDivisors < 500:
+#     # for i in range(1,n+1):
+#     #    TriNumb += i
+#     TriNumb = n*(n+1)/2
+#     
+#     for j in range(1,int(math.sqrt(TriNumb+1))):
+#         if TriNumb%j == 0:
+#             DivisorCount += 2
+#     
+#     if DivisorCount >= 500:
+#         print("Solution to Problem 12: ",TriNumb)
+#         break;
+#     
+#     # if DivisorCount > MaxDivisors:
+#     #    MaxDivisors = DivisorCount
+#     
+#     DivisorCount = 0
+#     TriNumb = 0
+#     n += 1
+# =============================================================================
+    
+    
+# Problem 13
+# Sum of 150 digit numbers
+# We're given a large "table" of digits that, I believe, need to be split to
+# form 150 digit numbers that can be summed together.
+# I'm a fool lol. It is 100 rows of 50 digit numbers lol. GOTCHA!
+    
+#number = np.loadtxt('NumberReadInForProblem13.txt',delimiter="\n")
+#print(number)
 
-while MaxDivisors < 500:
-    # for i in range(1,n+1):
-    #    TriNumb += i
-    TriNumb = n*(n+1)/2
-    
-    for j in range(1,int(math.sqrt(TriNumb+1))):
-        if TriNumb%j == 0:
-            DivisorCount += 2
-    
-    if DivisorCount >= 500:
-        print("Solution to Problem 12: ",TriNumb)
-        break;
-    
-    # if DivisorCount > MaxDivisors:
-    #    MaxDivisors = DivisorCount
-    
-    DivisorCount = 0
-    TriNumb = 0
-    n += 1
-    
-    
-    
-    
-    
-    
+
+numbers = open('NumberReadInForProblem13.txt', "r")
+lines = numbers.readlines()
+
+sum13 = 0
+for i in range(len(lines)):
+    sum13 += int(lines[i])
+
+First10Digits = str(sum13)[:10]
+print("Solution for Problem 13: ",First10Digits)
