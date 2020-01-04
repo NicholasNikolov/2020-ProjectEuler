@@ -74,4 +74,40 @@ for i in range(3,20):
 print("Largest Product pos diag: ",LargestProductd2)
 MatrixOfProducts.append(LargestProductd2)
 
-print(max(MatrixOfProducts))
+print("Solution to Problem 11: ",max(MatrixOfProducts))
+
+# Problem 12
+# The nth triangle number is the sum 1 + 2 + ... + n
+# Find the first triangle number with over 500 divisors
+
+TriNumb = 0
+MaxDivisors = 2
+n = 1
+DivisorCount = 0
+import math
+
+while MaxDivisors < 500:
+    # for i in range(1,n+1):
+    #    TriNumb += i
+    TriNumb = n*(n+1)/2
+    
+    for j in range(1,int(math.sqrt(TriNumb+1))):
+        if TriNumb%j == 0:
+            DivisorCount += 2
+    
+    if DivisorCount >= 500:
+        print("Solution to Problem 12: ",TriNumb)
+        break;
+    
+    # if DivisorCount > MaxDivisors:
+    #    MaxDivisors = DivisorCount
+    
+    DivisorCount = 0
+    TriNumb = 0
+    n += 1
+    
+    
+    
+    
+    
+    
