@@ -129,3 +129,32 @@ for i in range(len(lines)):
 
 First10Digits = str(sum13)[:10]
 print("Solution for Problem 13: ",First10Digits)
+
+
+
+# Problem 14
+# Collatz Problem
+# This code isn't very efficient.
+# Might be exceeding the 1 minute rule.
+# I need to check all values under 1M
+# But there may be some rule allowing certain numbers to be skipped
+LongestSeq = 10
+LongestSeqSN = 1
+for i in range(10,1000000):
+    x = i
+    SeqLen = 1
+    
+    while x != 1:
+        if x%2 == 0:
+            x /= 2
+            SeqLen += 1
+    
+        elif x%2 != 0:
+            x = (x*3 + 1) / 2
+            SeqLen += 2
+            
+    if SeqLen > LongestSeq:
+        LongestSeq = SeqLen
+        LongestSeqSN = i
+    
+print("Solution for Problem 14: ",LongestSeqSN)
