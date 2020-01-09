@@ -138,23 +138,44 @@ print("Solution for Problem 13: ",First10Digits)
 # Might be exceeding the 1 minute rule.
 # I need to check all values under 1M
 # But there may be some rule allowing certain numbers to be skipped
-LongestSeq = 10
-LongestSeqSN = 1
-for i in range(10,1000000):
-    x = i
-    SeqLen = 1
-    
-    while x != 1:
-        if x%2 == 0:
-            x /= 2
-            SeqLen += 1
-    
-        elif x%2 != 0:
-            x = (x*3 + 1) / 2
-            SeqLen += 2
-            
-    if SeqLen > LongestSeq:
-        LongestSeq = SeqLen
-        LongestSeqSN = i
-    
-print("Solution for Problem 14: ",LongestSeqSN)
+# =============================================================================
+# LongestSeq = 10
+# LongestSeqSN = 1
+# for i in range(10,1000000):
+#     x = i
+#     SeqLen = 1
+#     
+#     while x != 1:
+#         if x%2 == 0:
+#             x /= 2
+#             SeqLen += 1
+#     
+#         elif x%2 != 0:
+#             x = (x*3 + 1) / 2
+#             SeqLen += 2
+#             
+#     if SeqLen > LongestSeq:
+#         LongestSeq = SeqLen
+#         LongestSeqSN = i
+#     
+# print("Solution for Problem 14: ",LongestSeqSN)
+# =============================================================================
+
+# Problem 15
+# Approaching it from matrix standpoint. Every bottom left and top right vertex
+# can be added to equal the bottom right vertex. If I fill the first row and
+# first column with 1's, then I can add and fill the whole matrix.
+
+# Table size
+t = 20
+
+M = np.zeros((t+1,t+1))
+M[0,:] = 1
+M[:,0] = 1
+
+
+for j in range(1,t+1):
+    for i in range(1,t+1):
+        M[i,j] = M[i-1,j] + M[i,j-1]
+
+print("Solution to Problem 15: ",int(M[t,t]))
