@@ -39,3 +39,60 @@ print(summationTo99)
 solution = 891*10 + 63 + 3600 + 9*854 + 11 + 854
 
 print("Solution to 17: ",solution)
+
+
+# Problem 18
+# Note, for reading the matrix in I kind of took a lazy approach. I prepped the
+# data in excel via: Copy from Proj Euler > Paste into Excel > highlight data
+# (since it appears in one column) > Data > Text to Columns > delimit by Space
+# > Find and Replace empty cells with zeros.
+# This creates a 'right-triangle' of the data rather than the way it is shown
+# online. But it's the same idea. Just that it can go down or down-right.
+import numpy as np
+matrix = np.loadtxt("MatrixReadInForProblem18.txt",delimiter='\t')
+print(matrix)
+
+# Not sure entirely how to implement the brute force given the structure of the data
+# But I can try working my way up. Rather than down and down-right, I would go up
+# and up-left. If I choose the max of those, it should return the max since we ended
+# there anyways..
+
+# TotalSum = 0
+# MaxSum = 2
+# for StartColumn in range(14,-1,-1):
+#     CurrentColumn = StartColumn
+#     TotalSum = matrix[14][StartColumn]
+    
+#     for i in range(13,-1,-1):
+#         if matrix[i][CurrentColumn] > matrix[i][CurrentColumn-1]:
+#             TotalSum += matrix[i][CurrentColumn]
+#         else:
+#             TotalSum += matrix[i][CurrentColumn-1]
+#             CurrentColumn -= 1
+        
+#         if StartColumn == 3:
+#             print("matrix[",i,"][",CurrentColumn,"]"," = ", matrix[i,CurrentColumn])
+            
+#         #if StartColumn == 4:
+#            # print("Value above: ",matrix[i][CurrentColumn]," | Values Up-left: ",matrix[i][CurrentColumn-1])
+#         # print("Total Sum in row ",i," = ",TotalSum, " || Starting Column: ",StartColumn)
+#     #print(TotalSum, " for start value of ", matrix[14][StartColumn])
+#     if TotalSum > MaxSum:
+#         MaxSum = TotalSum
+        
+# print("Solution to Problem 18: ", MaxSum)
+    
+# =============================================================================
+# So the above was my attempt at coding this but my approach isn't accurate.
+# I think I might be missing higher values but always choosing the largest of
+# two choices. I did, however, find an algorithm that might work better though
+# I'm still unsure of how much it differs from my approach.
+# =============================================================================
+    
+    
+    
+    
+    
+    
+    
+    
