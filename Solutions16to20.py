@@ -101,5 +101,28 @@ for row in range(13,-1,-1):
         
 print("Solution to Problem 18: ",matrix[0,0])
     
+
+# Problem 19
+# Hope this isn't cheating lol. But there's a library for this
+# already so I don't have to build a bunch of conditionals.
+# Otherwise I'd need some conditionals to deal with the different days per month
+
+from datetime import date
+SundayCounter = 0
+for year in range(1901,2001):
+    for month in range(1,13):
+        if date(year,month,1).weekday() == 6:
+            SundayCounter+=1
+                    
+
+print("Solution to Problem 19: ",SundayCounter)
+
+
+
+
+
+
+
+
     
     
