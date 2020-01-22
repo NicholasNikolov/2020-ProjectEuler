@@ -117,12 +117,23 @@ for year in range(1901,2001):
 
 print("Solution to Problem 19: ",SundayCounter)
 
+# Problem 20
+# Factorial Digit Sum
+# This one's not too tough. Just calculate the factorial (Note: by 1M it takes a few seconds)
+# Then use the list property that converts a string into individual entries by letters in the string.
+# Convert those to ints and sum! :)
 
+factorial = 1
+for i in range(100,0,-1):
+    factorial *= i
+    
+factorialList = list(str(factorial))
+summation = 0
+factorialList = [int(x) for x in factorialList]
+for digit in factorialList:
+    summation += digit
 
-
-
-
-
+print("Solution to problem 20: ",summation)
 
     
     
